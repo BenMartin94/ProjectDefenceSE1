@@ -1,6 +1,7 @@
 #Internal package file, do not edit.
-#Thu Jan 23 19:47:50 CST 2020
+#Fri Jan 24 14:01:46 CST 2020
 4.path=lib/armeabi/libgdx-box2d.so
+13.baseType=DIRECTORY
 8.set=NATIVE_RESOURCE
 6.path=lib/arm64-v8a/libgdx.so
 0.baseType=DIRECTORY
@@ -15,6 +16,7 @@
 7.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 11.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 9.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
+13.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\merged_assets\\debug\\out
 1.baseType=DIRECTORY
 11.set=NATIVE_RESOURCE
 0.set=ASSET
@@ -34,17 +36,19 @@
 9.path=lib/armeabi-v7a/libgdx.so
 6.set=NATIVE_RESOURCE
 2.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
+13.path=playImage.png
 11.baseType=DIRECTORY
 4.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 3.baseType=DIRECTORY
 6.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 10.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
+13.set=ASSET
 8.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 2.set=NATIVE_RESOURCE
 8.baseType=DIRECTORY
 12.base=C\:\\Users\\Benjo\\School Work\\Year3\\SoftWareEng\\testV4\\android\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\0
 9.set=NATIVE_RESOURCE
-count=13
+count=14
 12.baseType=DIRECTORY
 4.baseType=DIRECTORY
 5.set=ASSET
