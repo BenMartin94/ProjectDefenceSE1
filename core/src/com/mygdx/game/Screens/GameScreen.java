@@ -19,6 +19,8 @@ import com.mygdx.game.Scenes.Hud;
 import com.mygdx.game.Utils.*;
 
 public class GameScreen implements Screen {
+
+
     private MyGdxGame game;
     Texture texture;
     private CenteredFont title;
@@ -36,7 +38,7 @@ public class GameScreen implements Screen {
         gamePort = new FitViewport(Constants.width, Constants.height,gameCam);
         stage = new Stage(gamePort, game.batch);
 
-        hud = new Hud(game.batch, gamePort, stage);
+        hud = new Hud(game.batch, gamePort, stage, game);
 
     }
     @Override
@@ -87,5 +89,8 @@ public class GameScreen implements Screen {
     @Override
     public void dispose() {
 
+    }
+    public MyGdxGame getGame() {
+        return game;
     }
 }

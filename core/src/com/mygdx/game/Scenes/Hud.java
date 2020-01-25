@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.ImageButton;
@@ -13,6 +14,8 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.MyGdxGame;
+import com.mygdx.game.Screens.WorldScreen;
 import com.mygdx.game.Utils.Constants;
 
 import javax.swing.text.View;
@@ -28,10 +31,12 @@ public class Hud {
     private TextureRegion myTextureRegion;
     private TextureRegionDrawable myTexRegionDrawable;
     private ImageButton button;
-    public Hud(SpriteBatch sb, Viewport viewport, Stage stage){
+    private  MyGdxGame game;
+    public Hud(SpriteBatch sb, Viewport viewport, Stage stage, MyGdxGame game1){
         worldTimer = 300;
         timeCount = 0;
         Score = 0;
+        this.game = game1;
         this.stage = stage;
         myTexture = new Texture("playImage.png");
         myTextureRegion = new TextureRegion(myTexture);
@@ -41,7 +46,7 @@ public class Hud {
             @Override
             public void clicked(InputEvent event, float x, float y){
                 //System.out.println("Strating game");
-
+                game.setScreen(new WorldScreen(game));
             }
         });
         this.viewport = viewport;
