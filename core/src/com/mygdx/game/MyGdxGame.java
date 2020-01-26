@@ -26,7 +26,7 @@ public class MyGdxGame extends Game {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		setScreen(new GameScreen(this));
+		setScreen(new WorldScreen(this));
 		//cam = new OrthographicCamera();
 		//(cam).setToOrtho(false, 600, 800)
 		//title = new CenteredFont();

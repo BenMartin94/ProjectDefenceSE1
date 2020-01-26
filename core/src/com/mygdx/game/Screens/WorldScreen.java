@@ -35,7 +35,10 @@ public class WorldScreen implements Screen {
     }
     public void handleInput(float dt){
         if(Gdx.input.isTouched()){
-            gameCam.position.x+=100;
+            float x = -Gdx.input.getDeltaX();
+            float y = Gdx.input.getDeltaY();
+            gameCam.position.x+=x;
+            gameCam.position.y+=y;
         }
     }
     public void update(float dt){
@@ -48,6 +51,8 @@ public class WorldScreen implements Screen {
     public void show() {
 
     }
+
+
 
     @Override
     public void render(float delta) {
