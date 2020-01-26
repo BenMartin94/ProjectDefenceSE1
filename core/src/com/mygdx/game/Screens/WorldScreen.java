@@ -9,6 +9,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -33,10 +34,13 @@ public class WorldScreen implements Screen,Observer {
         this.game = game;
         gameCam = new OrthographicCamera();
         gamePort = new FitViewport(Constants.width, Constants.height, gameCam);
+
         stage = new Stage(gamePort, game.batch);
         mapLoader = new TmxMapLoader();
         map = mapLoader.load("first.tmx");
+
         renderer = new OrthogonalTiledMapRenderer(map);
+
         gameCam.position.set(gamePort.getWorldWidth()/2, gamePort.getWorldHeight()/2, 0);
         gestureListener = new WorldGestureListener();
         gestureListener.addObserver(this);
@@ -68,10 +72,18 @@ public class WorldScreen implements Screen,Observer {
                 //do touch logic
             }
             else if(data.gestureType.equals("pan")){
-                float x = -data.gestureData.get(2);
-                float y = data.gestureData.get(3);
-                gameCam.position.x+=x;
-                gameCam.position.y+=y;
+                float deltaX = data.gestureData.get(2);
+                float deltaY = data.gestureData.get(3);
+                float startingX = data.gestureData.get(0);
+                float startingY = data.gestureData.get(1);
+                float endingX = startingX+deltaX;
+                float endingY = startingY+deltaY;
+                Vector3 startingWorld = gameCam.unproject(new Vector3(startingX, startingY, 0));
+                Vector3 endingWorld = gameCam.unproject(new Vector3(endingX, endingY, 0));
+                float delatXWorld = endingWorld.x-startingWorld.x;
+                float deltaYWorld = endingWorld.y-startingWorld.y;
+                gameCam.translate(-delatXWorld, -deltaYWorld);
+                
             }
             else if(data.gestureType.equals("zoom")){
                 float zoomVal = data.gestureData.get(1)-data.gestureData.get(0);
