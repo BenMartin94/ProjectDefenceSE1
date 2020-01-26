@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.mygdx.game.Screens.GameScreen;
+import com.mygdx.game.Screens.*;
 
 
 public class MyGdxGame extends Game {
@@ -26,7 +26,7 @@ public class MyGdxGame extends Game {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		setScreen(new GameScreen(this));
+		setScreen(new WorldScreen(this));
 		//cam = new OrthographicCamera();
 		//(cam).setToOrtho(false, 600, 800)
 		//title = new CenteredFont();
