@@ -87,7 +87,7 @@ public class WorldScreen implements Screen,Observer {
             }
             else if(data.gestureType.equals("zoom")){
                 float zoomVal = data.gestureData.get(1)-data.gestureData.get(0);
-                gameCam.zoom+=zoomVal/40000;
+                gameCam.zoom-=zoomVal/40000;
                 if(gameCam.zoom>Constants.zoomMax){
                     gameCam.zoom = Constants.zoomMax;
                 }
